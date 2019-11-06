@@ -41,8 +41,8 @@ function addRepos(buildGradle) {
 
   // modify the line to add the necessary repo
   // Crashlytics goes under buildscripts which is the first grouping in the file
-  var fabricMavenRepo = whitespace + 'maven { url \'https://maven.fabric.io/public\' } // Fabrics Maven repository from cordova-plugin-firebase'
-  var modifiedLine = match[0] + '\n' + fabricMavenRepo;
+  // var fabricMavenRepo = whitespace + 'maven { url \'https://maven.fabric.io/public\' } // Fabrics Maven repository from cordova-plugin-firebase'
+  var modifiedLine = match[0];
 
   // modify the actual line
   buildGradle = buildGradle.replace(/^(\s*)jcenter\(\)/m, modifiedLine);
