@@ -24,8 +24,8 @@ function addDependencies(buildGradle) {
   
   // modify the line to add the necessary dependencies
   var googlePlayDependency = whitespace + 'classpath \'com.google.gms:google-services:4.2.0\' // google-services dependency from cordova-plugin-firebase';
-  var fabricDependency = whitespace + 'classpath \'io.fabric.tools:gradle:1.31.2\' // fabric dependency from cordova-plugin-firebase'
-  var modifiedLine = match[0] + '\n' + googlePlayDependency + '\n' + fabricDependency;
+  // var fabricDependency = whitespace + 'classpath \'io.fabric.tools:gradle:1.31.2\' // fabric dependency from cordova-plugin-firebase'
+  var modifiedLine = match[0] + '\n' + googlePlayDependency;
   
   // modify the actual line
   return buildGradle.replace(/^(\s*)classpath 'com.android.tools.build(.*)/m, modifiedLine);
