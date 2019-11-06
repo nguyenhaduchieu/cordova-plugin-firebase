@@ -11,7 +11,7 @@ import android.util.Base64;
 import android.util.Log;
 
 import com.crashlytics.android.Crashlytics;
-import io.fabric.sdk.android.Fabric;
+// import io.fabric.sdk.android.Fabric;
 import java.lang.reflect.Field;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
