@@ -23,9 +23,9 @@ function addDependencies(buildGradle) {
   var whitespace = match[1];
   
   // modify the line to add the necessary dependencies
-  var googlePlayDependency = whitespace + 'classpath \'com.google.gms:google-services:4.2.0\' // google-services dependency from cordova-plugin-firebase';
-  var fabricDependency = whitespace + 'classpath \'io.fabric.tools:gradle:1.+\' // fabric dependency from cordova-plugin-firebase'
-  var modifiedLine = match[0] + '\n' + googlePlayDependency + '\n' + fabricDependency;
+  var googlePlayDependency = whitespace + 'classpath \'com.google.gms:google-services:4.3.2\' // google-services dependency from cordova-plugin-firebase';
+  // var fabricDependency = whitespace + 'classpath \'io.fabric.tools:gradle:1.+\' // fabric dependency from cordova-plugin-firebase'
+  var modifiedLine = match[0] + '\n' + googlePlayDependency;
   
   // modify the actual line
   return buildGradle.replace(/^(\s*)classpath 'com.android.tools.build(.*)/m, modifiedLine);
@@ -41,8 +41,8 @@ function addRepos(buildGradle) {
 
   // modify the line to add the necessary repo
   // Crashlytics goes under buildscripts which is the first grouping in the file
-  var fabricMavenRepo = whitespace + 'maven { url \'https://maven.fabric.io/public\' } // Fabrics Maven repository from cordova-plugin-firebase'
-  var modifiedLine = match[0] + '\n' + fabricMavenRepo;
+  // var fabricMavenRepo = whitespace + 'maven { url \'https://maven.fabric.io/public\' } // Fabrics Maven repository from cordova-plugin-firebase'
+  var modifiedLine = match[0];
 
   // modify the actual line
   buildGradle = buildGradle.replace(/^(\s*)jcenter\(\)/m, modifiedLine);
