@@ -2,10 +2,16 @@ buildscript {
     repositories {
         jcenter()
         mavenCentral()
+        // Additional repository for fabric resources
+        maven {
+            url 'https://maven.fabric.io/public'
+        }
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:+'
         classpath 'com.google.gms:google-services:4.2.0'
+        // Add fabric classpath
+        classpath 'io.fabric.tools:gradle:1.26.1'
     }
 }
 repositories {
@@ -28,3 +34,5 @@ cdvPluginPostBuildExtras.add({
     apply plugin: 'com.google.gms.google-services'
     apply plugin: 'io.fabric'
 })
+
+apply plugin: 'io.fabric'
